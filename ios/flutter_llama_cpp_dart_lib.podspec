@@ -27,11 +27,11 @@ A new Flutter plugin project.
   # `../src/*` so that the C sources can be shared among all target platforms.
   s.source           = { :path => '.' }
   s.source_files = 'llama.cpp/src/llama.cpp',
-                   'llama.cpp/ggml/include/ggml.c',
-                   'llama.cpp/ggml/include/ggml-alloc.c',
-                   'llama.cpp/ggml/include/ggml-backend.c',
-                   'llama.cpp/ggml/include/ggml-metal.m',
-                   'llama.cpp/ggml/include/ggml-quants.c',
+                   'llama.cpp/ggml/src/ggml.c',
+                   'llama.cpp/ggml/src/ggml-alloc.c',
+                   'llama.cpp/ggml/src/ggml-backend.c',
+                   'llama.cpp/ggml/src/ggml-metal.m',
+                   'llama.cpp/ggml/src/ggml-quants.c',
                    'llama.cpp/src/unicode.cpp',
                    'llama.cpp/src/unicode-data.cpp',
                    'llama.cpp/common/common.cpp',
@@ -74,7 +74,7 @@ set -e
 set -u
 set -o pipefail
 cd "${PODS_TARGET_SRCROOT}/llama.cpp"
-xcrun metal -target "air64-${LLVM_TARGET_TRIPLE_VENDOR}-${LLVM_TARGET_TRIPLE_OS_VERSION}${LLVM_TARGET_TRIPLE_SUFFIX:-\"\"}" -ffast-math -std=ios-metal2.3 -o "${METAL_LIBRARY_OUTPUT_DIR}/default.metallib" *.metal
+xcrun metal -target "air64-${LLVM_TARGET_TRIPLE_VENDOR}-${LLVM_TARGET_TRIPLE_OS_VERSION}${LLVM_TARGET_TRIPLE_SUFFIX:-\"\"}" -ffast-math -std=ios-metal2.3 -o "${METAL_LIBRARY_OUTPUT_DIR}/default.metallib" "${PODS_TARGET_SRCROOT}/llama.cpp/ggml/src/ggml-metal.metal"
 SCRIPT
     }
   ]
