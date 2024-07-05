@@ -41,22 +41,22 @@ A new Flutter plugin project.
                    'llama.cpp/common/sampling.cpp',
                    'llama.cpp/common/stb_image.h',
   s.frameworks = 'Foundation', 'Metal', 'MetalKit'
-  s.platform = :osx, '10.11'
+  s.platform = :ios, '11.0'
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
     'USER_HEADER_SEARCH_PATHS' => [
 
     '$(PODS_TARGET_SRCROOT)/llama.cpp/**/*.h',
-    '$(PODS_TARGET_SRCROOT)/llama.cpp/common/**/*.h'
-    '$(PODS_TARGET_SRCROOT)/llama.cpp/src/**/*.h'
-    '$(PODS_TARGET_SRCROOT)/llama.cpp/ggml/include/**/*.h'
-    '$(PODS_TARGET_SRCROOT)/llama.cpp/ggml/src/**/*.h'
+    '$(PODS_TARGET_SRCROOT)/llama.cpp/common/**/*.h',
+    '$(PODS_TARGET_SRCROOT)/llama.cpp/src/**/*.h',
+    '$(PODS_TARGET_SRCROOT)/llama.cpp/ggml/include/**/*.h',
+    '$(PODS_TARGET_SRCROOT)/llama.cpp/ggml/src/**/*.h',
 
     '$(PODS_TARGET_SRCROOT)/../llama.cpp/**/*.h',
-    '$(PODS_TARGET_SRCROOT)/../llama.cpp/common/**/*.h'
-    '$(PODS_TARGET_SRCROOT)/../llama.cpp/src/**/*.h'
-    '$(PODS_TARGET_SRCROOT)/../llama.cpp/ggml/include/**/*.h'
-    '$(PODS_TARGET_SRCROOT)/../llama.cpp/ggml/src/**/*.h'
+    '$(PODS_TARGET_SRCROOT)/../llama.cpp/common/**/*.h',
+    '$(PODS_TARGET_SRCROOT)/../llama.cpp/src/**/*.h',
+    '$(PODS_TARGET_SRCROOT)/../llama.cpp/ggml/include/**/*.h',
+    '$(PODS_TARGET_SRCROOT)/../llama.cpp/ggml/src/**/*.h',
 
     ],
     'OTHER_CFLAGS' => ['$(inherited)', '-O3', '-flto', '-fno-objc-arc'],

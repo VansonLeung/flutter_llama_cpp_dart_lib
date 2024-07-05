@@ -18,7 +18,9 @@ Future<String?> ggufFilePickerGetFilePathFromFilePicker() async {
       label: '.gguf',
       extensions: ['gguf'],
       // UTIs are required for iOS, which does not have a .gguf UTI.
-      uniformTypeIdentifiers: [],
+      uniformTypeIdentifiers: [
+        "dyn.ah62d4rv4ge80s35zq2",
+      ],
     ),
   ]);
 
